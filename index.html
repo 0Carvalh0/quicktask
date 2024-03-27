@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do List</title>
 
-    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/reset.css" />
 
-    <link rel="stylesheet" href="./src/styles/index.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./src/styles/index.css" />
+  </head>
+  <body>
+    <main>
+      <section class="todoapp">
+        <h1>To Do List</h1>
+        <label for="addTask">Tarefa: </label>
+        <input type="text" name="itask" id="addTask" />
+        <input type="button" value="Adicionar" />
+      </section>
+      <section class="tasksList">
+        <h1>Tarefas</h1>
+        <ul class="listTasks">
+          <li class="task">
+            <input type="checkbox" name="taskCheck" id="taskCheck" />
+            <p>Tomar banho</p>
+            <button type="button">Excluir</button>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
 </html>
