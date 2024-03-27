@@ -12,25 +12,41 @@
   <body>
     <main>
       <section class="todoapp">
-        <h1 class="todoapp-title">To Do List</h1>
+        <h1 class="todoapp-title title">To Do List</h1>
         <div>
           <label for="todoapp-addTask">Tarefa: </label>
           <input type="text" name="itask" id="todoapp-addTask" />
-          <input type="button" value="Adicionar" />
+          <input
+            type="button"
+            value="Adicionar"
+            class="todoapp-buttonAdd todo-button"
+          />
         </div>
       </section>
       <section class="tasksList">
-        <h1 class="tasksList-title">Tarefas</h1>
+        <h1 class="tasksList-title title">Tarefas</h1>
         <ul class="tasksList-listTasks">
           <li class="tasksList-task">
-            <input type="checkbox" name="taskCheck" id="tasksList-taskCheck" />
-            <p>Tomar banho</p>
-            <button type="button">Excluir</button>
+            <input
+              type="checkbox"
+              name="taskCheck"
+              id="task1"
+              class="tasksList-taskCheck"
+            />
+            <label for="task1">Tomar banho</label>
+            <button type="button" class="todo-button">Excluir</button>
+            <button type="button" class="todo-button">Editar</button>
           </li>
           <li class="tasksList-task">
-            <input type="checkbox" name="taskCheck" id="tasksList-taskCheck" />
-            <p>Tomar banho</p>
-            <button type="button">Excluir</button>
+            <input
+              type="checkbox"
+              name="taskCheck"
+              id="task2"
+              class="tasksList-taskCheck"
+            />
+            <label for="task2">Tomar banho</label>
+            <button type="button" class="todo-button">Excluir</button>
+            <button type="button" class="todo-button">Editar</button>
           </li>
         </ul>
       </section>
