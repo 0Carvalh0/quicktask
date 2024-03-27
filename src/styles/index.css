@@ -1,7 +1,42 @@
 @charset "UTF-8";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.todoapp {
+  display: flex;
+  flex-direction: column;
+}
+
+.todoapp-title {
+  align-self: center;
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+}
+
+.tasksList-title {
+  align-self: center;
+}
+
+.tasksList-task {
+  display: flex;
 }

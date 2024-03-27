@@ -12,16 +12,23 @@
   <body>
     <main>
       <section class="todoapp">
-        <h1>To Do List</h1>
-        <label for="addTask">Tarefa: </label>
-        <input type="text" name="itask" id="addTask" />
-        <input type="button" value="Adicionar" />
+        <h1 class="todoapp-title">To Do List</h1>
+        <div>
+          <label for="todoapp-addTask">Tarefa: </label>
+          <input type="text" name="itask" id="todoapp-addTask" />
+          <input type="button" value="Adicionar" />
+        </div>
       </section>
       <section class="tasksList">
-        <h1>Tarefas</h1>
-        <ul class="listTasks">
-          <li class="task">
-            <input type="checkbox" name="taskCheck" id="taskCheck" />
+        <h1 class="tasksList-title">Tarefas</h1>
+        <ul class="tasksList-listTasks">
+          <li class="tasksList-task">
+            <input type="checkbox" name="taskCheck" id="tasksList-taskCheck" />
+            <p>Tomar banho</p>
+            <button type="button">Excluir</button>
+          </li>
+          <li class="tasksList-task">
+            <input type="checkbox" name="taskCheck" id="tasksList-taskCheck" />
             <p>Tomar banho</p>
             <button type="button">Excluir</button>
           </li>
