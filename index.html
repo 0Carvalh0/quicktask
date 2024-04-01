@@ -21,6 +21,8 @@
       crossorigin="anonymous"
       defer
     ></script>
+
+    <script src="./src/scripts/generateTask.js" defer></script>
   </head>
   <body>
     <main>
@@ -28,39 +30,13 @@
         <h1 class="todoapp-title title">To Do List</h1>
         <div>
           <label for="todoapp-addTask">Tarefa:</label>
-          <textarea
-            name="itask"
-            id="todoapp-addTask"
-            cols="30"
-            rows="1"
-          ></textarea>
-          <button type="button" class="todo-button"><i class="fa-solid fa-plus"></i>Adicionar</button>
+          <input type="text" name="itask" id="todoapp-addTask">
+          <button type="button" class="todo-button" id="button-Add"><i class="fa-solid fa-plus"></i>Adicionar</button>
         </div>
       </section>
       <section class="tasksList">
         <h1 class="tasksList-title title">Tarefas</h1>
         <ul class="tasksList-listTasks">
-          <li class="tasksList-task">
-            <div>
-              <input
-                type="checkbox"
-                name="taskCheck"
-                id="task1"
-                class="tasksList-taskCheck"
-              />
-              <label for="task1">Tomar banho</label>
-            </div>
-            <div>
-              <button
-                type="button"
-                class="todo-button fa-solid fa-pen-to-square"
-              ></button>
-              <button
-                type="button"
-                class="todo-button fa-solid fa-trash"
-              ></button>
-            </div>
-          </li>
         </ul>
       </section>
     </main>
