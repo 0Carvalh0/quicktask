@@ -8,45 +8,58 @@
     <link rel="stylesheet" href="./src/styles/reset.css" />
 
     <link rel="stylesheet" href="./src/styles/index.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/9bfb2428d0.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
   <body>
     <main>
       <section class="todoapp">
         <h1 class="todoapp-title title">To Do List</h1>
         <div>
-          <label for="todoapp-addTask">Tarefa: </label>
-          <input type="text" name="itask" id="todoapp-addTask" />
-          <input
-            type="button"
-            value="Adicionar"
-            class="todoapp-buttonAdd todo-button"
-          />
+          <label for="todoapp-addTask">Tarefa:</label>
+          <textarea
+            name="itask"
+            id="todoapp-addTask"
+            cols="30"
+            rows="1"
+          ></textarea>
+          <button type="button" class="todo-button"><i class="fa-solid fa-plus"></i>Adicionar</button>
         </div>
       </section>
       <section class="tasksList">
         <h1 class="tasksList-title title">Tarefas</h1>
         <ul class="tasksList-listTasks">
           <li class="tasksList-task">
-            <input
-              type="checkbox"
-              name="taskCheck"
-              id="task1"
-              class="tasksList-taskCheck"
-            />
-            <label for="task1">Tomar banho</label>
-            <button type="button" class="todo-button">Excluir</button>
-            <button type="button" class="todo-button">Editar</button>
-          </li>
-          <li class="tasksList-task">
-            <input
-              type="checkbox"
-              name="taskCheck"
-              id="task2"
-              class="tasksList-taskCheck"
-            />
-            <label for="task2">Tomar banho</label>
-            <button type="button" class="todo-button">Excluir</button>
-            <button type="button" class="todo-button">Editar</button>
+            <div>
+              <input
+                type="checkbox"
+                name="taskCheck"
+                id="task1"
+                class="tasksList-taskCheck"
+              />
+              <label for="task1">Tomar banho</label>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="todo-button fa-solid fa-pen-to-square"
+              ></button>
+              <button
+                type="button"
+                class="todo-button fa-solid fa-trash"
+              ></button>
+            </div>
           </li>
         </ul>
       </section>
