@@ -28,16 +28,21 @@
     <main>
       <section class="todoapp">
         <h1 class="todoapp-title title">To Do List</h1>
-        <div>
-          <label for="todoapp-addTask">Tarefa:</label>
-          <input type="text" name="itask" id="todoapp-addTask">
-          <button type="button" class="todo-button" id="button-Add"><i class="fa-solid fa-plus"></i>Adicionar</button>
+        <div class="todoapp-boxTextAdd">
+          <input
+            type="text"
+            name="itask"
+            placeholder="Digite a sua tarefa:"
+            id="todoapp-addTask"
+          />
+          <button type="button" class="todo-button" id="button-Add">
+            <i class="fa-solid fa-plus"></i>ADD
+          </button>
         </div>
-      </section>
-      <section class="tasksList">
-        <h1 class="tasksList-title title">Tarefas</h1>
-        <ul class="tasksList-listTasks">
-        </ul>
+        <section class="tasksList">
+          <h1 class="tasksList-title title">Tarefas</h1>
+          <ul class="tasksList-listTasks"></ul>
+        </section>
       </section>
     </main>
   </body>

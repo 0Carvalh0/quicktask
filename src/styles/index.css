@@ -2,11 +2,13 @@
 
 :root {
   /* CORES */
-  --color01: #c6ebbe;
-  --color02: #a9dbb8;
-  --color03: #7ca5b8;
-  --color04: #38369a;
-  --color05: #020887;
+  --colorwhite: #f7f7f2;
+  --colorblack: #121113;
+  --color01: #f2f3ae;
+  --color02: #d58936;
+  --color03: #a44200;
+  --color04: #69140e;
+  --color05: #3c1518;
 
   /* FONTES */
   --defaultFont: "Titillium Web", sans-serif;
@@ -21,7 +23,7 @@
 
   font-family: var(--defaultFont);
   font-size: 20px;
-  color: #f1f1f1;
+  color: var(--color05);
 }
 
 main {
@@ -33,10 +35,7 @@ main {
   justify-content: center;
   align-items: center;
 
-  padding: 1rem;
-  gap: 1rem;
-
-  background-color: #0f0f0f;
+  background-image: radial-gradient(var(--color04), var(--color05));
 }
 
 .title {
@@ -44,58 +43,64 @@ main {
   font-weight: 600;
 }
 
-.todoapp,
-.tasksList {
-  background-image: linear-gradient(160deg, var(--color04), var(--color05));
-  border: 0.2rem solid #f1f1f1;
+.todoapp {
+  background-image: linear-gradient(160deg, var(--color01), var(--color02));
+  border: 0.2rem solid var(--color05);
   border-radius: 2rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
 
   gap: 1rem;
   padding: 1rem;
+  box-shadow: 0px 0px 8px 2px #12111370;
 }
 
-.todoapp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.todoapp .todo-button {
+.todo-button {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  border: 0.2rem solid #f1f1f1;
-  border-radius: 2rem;
+  justify-content: space-between;
   text-transform: uppercase;
+
+  border: 0.2rem solid var(--color05);
+  border-radius: 2rem;
   background-color: transparent;
-  padding: .3rem .8rem;
+  padding: 0.3rem 0.8rem;
 
-  gap: .5rem;
+  gap: 0.2rem;
 }
 
-.todoapp-title {
-  align-self: center;
-}
+.todoapp .todoapp-boxTextAdd {
+  width: 100%;
+  border: 0.2rem solid var(--color05);
+  border-radius: 2rem;
+  box-shadow: inset 0px 0px 5px 1px #12111370;
 
-.todoapp > div {
   display: flex;
-  flex-flow: column wrap;
-  flex: 1 1 auto;
-  justify-content: space-around;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
-
-  gap: 0.5rem;
 }
 
 #todoapp-addTask {
-  background-color: transparent;
-  border: 0.2rem solid #f1f1f1;
-  border-radius: 2rem;
   width: 100%;
+  height: 100%;
+
+  border: none;
+  border-radius: 2rem;
+  background-color: transparent;
 
   padding: 0.1rem 1rem;
+}
+
+.tasksList {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tasksList .todo-button {
@@ -103,58 +108,36 @@ main {
   height: 42px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
-
-  border: 0.2rem solid #f1f1f1;
-  border-radius: 2rem;
-  color: #f1f1f1;
-  text-transform: uppercase;
-  background-color: transparent;
-  padding: 0.8rem;
-}
-
-.tasksList {
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
   align-items: center;
-}
 
-.tasksList div {
-  display: flex;
-  gap: 1rem;
-}
-.tasksList label {
-  width: 100%;
-}
-
-.tasksList-title {
-  align-self: center;
+  border: 0.2rem solid var(--color05);
+  border-radius: 2rem;
+  color: var(--color05);
+  background-color: transparent;
 }
 
 .tasksList-listTasks {
   width: 100%;
 
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
-
+  
   gap: 1rem;
 }
 
 .tasksList-task {
   width: 100%;
-
+  
   gap: 1rem;
-
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.tasksList-taskCheck {
-  width: 20px;
-  height: 20px;
+.tasksList-task div:last-child {
+  display: flex;
+  gap: 1rem;
 }

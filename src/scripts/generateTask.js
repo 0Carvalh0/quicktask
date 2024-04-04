@@ -18,7 +18,7 @@ btnAdd.addEventListener("click", () => {
         id="task${tasksList.length}"
         class="tasksList-taskCheck"
         />
-        <label for="task1">${textBoxAdd.value}</label>
+        <label for="task${tasksList.length}">${textBoxAdd.value}</label>
         </div>
         <div>
         <button
