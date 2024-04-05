@@ -35,3 +35,9 @@ btnAdd.addEventListener("click", () => {
   }
   textBoxAdd.value = "";
 });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      btnAdd.click();
+    }
+  })

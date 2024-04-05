@@ -46,6 +46,7 @@ main {
 }
 
 .todoapp {
+  max-height: 100vh;
   background-image: linear-gradient(160deg, var(--color04), var(--color05));
   border: 0.2rem solid var(--color02);
   border-radius: 2rem;
