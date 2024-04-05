@@ -4,11 +4,11 @@
   /* CORES */
   --colorwhite: #f7f7f2;
   --colorblack: #121113;
-  --color01: #f2f3ae;
-  --color02: #d58936;
-  --color03: #a44200;
-  --color04: #69140e;
-  --color05: #3c1518;
+  --color01: #5bba6f;
+  --color02: #3fa34d;
+  --color03: #2a9134;
+  --color04: #137547;
+  --color05: #054a29;
 
   /* FONTES */
   --defaultFont: "Titillium Web", sans-serif;
@@ -23,7 +23,7 @@
 
   font-family: var(--defaultFont);
   font-size: 20px;
-  color: var(--color05);
+  color: var(--colorwhite);
 }
 
 main {
@@ -35,7 +35,9 @@ main {
   justify-content: center;
   align-items: center;
 
-  background-image: radial-gradient(var(--color04), var(--color05));
+  background: #054a29 url(../../public/images/bg001.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
 }
 
 .title {
@@ -44,8 +46,8 @@ main {
 }
 
 .todoapp {
-  background-image: linear-gradient(160deg, var(--color01), var(--color02));
-  border: 0.2rem solid var(--color05);
+  background-image: linear-gradient(160deg, var(--color04), var(--color05));
+  border: 0.2rem solid var(--color02);
   border-radius: 2rem;
 
   display: flex;
@@ -64,7 +66,7 @@ main {
   justify-content: space-between;
   text-transform: uppercase;
 
-  border: 0.2rem solid var(--color05);
+  border: 0.2rem solid var(--color02);
   border-radius: 2rem;
   background-color: transparent;
   padding: 0.3rem 0.8rem;
@@ -74,7 +76,7 @@ main {
 
 .todoapp .todoapp-boxTextAdd {
   width: 100%;
-  border: 0.2rem solid var(--color05);
+  border: 0.2rem solid var(--color02);
   border-radius: 2rem;
   box-shadow: inset 0px 0px 5px 1px #12111370;
 
@@ -82,6 +84,12 @@ main {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+}
+
+#button-Add {
+  border: none;
+  outline: 0.2rem solid var(--color02);
+  background-color: var(--color04);
 }
 
 #todoapp-addTask {
@@ -93,6 +101,10 @@ main {
   background-color: transparent;
 
   padding: 0.1rem 1rem;
+}
+
+#todoapp-addTask:focus {
+  outline: none;
 }
 
 .tasksList {
@@ -111,9 +123,9 @@ main {
   justify-content: center;
   align-items: center;
 
-  border: 0.2rem solid var(--color05);
+  border: 0.2rem solid var(--color02);
   border-radius: 2rem;
-  color: var(--color05);
+  color: var(--color02);
   background-color: transparent;
 }
 
@@ -123,15 +135,15 @@ main {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  
+
   gap: 1rem;
 }
 
 .tasksList-task {
   width: 100%;
-  
+
   gap: 1rem;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;

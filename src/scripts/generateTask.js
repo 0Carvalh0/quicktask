@@ -8,19 +8,19 @@ btnAdd.addEventListener("click", () => {
     window.alert("[ERRO] Você não digitou nenhuma tarefa!");
   } else {
     tasksList.push(textBoxAdd.value);
-    
+
     sectionAdd.innerHTML += `
     <li class="tasksList-task">
-    <div>
-    <input
-    type="checkbox"
-    name="taskCheck"
+      <div>
+        <input
+        type="checkbox"
+        name="taskCheck"
         id="task${tasksList.length}"
         class="tasksList-taskCheck"
         />
-        <label for="task${tasksList.length}">${textBoxAdd.value}</label>
-        </div>
-        <div>
+        <label for="task${tasksList.length}" id="label-Task${tasksList.length}">${textBoxAdd.value}</label>
+      </div>
+      <div>
         <button
         type="button"
         class="todo-button fa-solid fa-pen-to-square"
@@ -29,9 +29,9 @@ btnAdd.addEventListener("click", () => {
         type="button"
         class="todo-button fa-solid fa-trash"
         ></button>
-        </div>
-        </li>
+      </div>
+    </li>
         `;
-    }
-    textBoxAdd.value = "";
+  }
+  textBoxAdd.value = "";
 });
