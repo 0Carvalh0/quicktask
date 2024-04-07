@@ -27,7 +27,7 @@
   </head>
   <body>
     <main>
-      <section class="todoapp">
+      <form class="todoapp" id="add-form">
         <h1 class="todoapp-title title">To Do List</h1>
         <div class="todoapp-boxTextAdd">
           <input
@@ -37,14 +37,24 @@
             id="todoapp-addTask"
           />
           <button type="button" class="todo-button" id="button-Add">
-            <i class="fa-solid fa-plus"></i>ADD
+            <i class="fa-solid fa-plus"></i>
           </button>
         </div>
-        <section class="tasksList">
-          <h1 class="tasksList-title title">Tarefas</h1>
-          <ul class="tasksList-listTasks"></ul>
-        </section>
-      </section>
+        <ul class="tasksList-listTasks"></ul>
+      </form>
+      <form class="todoapp hide" id="edit-form">
+        <div class="todoapp-boxTextAdd">
+          <input
+            type="text"
+            name="itask"
+            placeholder="Edite a sua tarefa:"
+            id="todoapp-editTask"
+          />
+          <button type="button" class="todo-button" id="button-Edit">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+        </div>
+      </form>
     </main>
   </body>
 </html>

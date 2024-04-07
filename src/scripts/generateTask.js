@@ -11,14 +11,14 @@ btnAdd.addEventListener("click", () => {
 
     sectionAdd.innerHTML += `
     <li class="tasksList-task">
-      <div>
-        <input
-        type="checkbox"
-        name="taskCheck"
+      <div class="task-LeftSide">
+        <span name="taskCheck"
         id="task${tasksList.length}"
-        class="tasksList-taskCheck"
-        />
-        <label for="task${tasksList.length}" id="label-Task${tasksList.length}">${textBoxAdd.value}</label>
+        class="tasksList-taskCheck">
+          <i class="fa-solid"></i> 
+          <!--fa-check-->
+        </span>
+        <label for="task${tasksList.length}" id="label-Task${tasksList.length}" class="done">${textBoxAdd.value}</label>
       </div>
       <div>
         <button
@@ -36,8 +36,8 @@ btnAdd.addEventListener("click", () => {
   textBoxAdd.value = "";
 });
 
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      btnAdd.click();
-    }
-  })
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    btnAdd.click();
+  }
+});
