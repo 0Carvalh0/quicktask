@@ -36,11 +36,12 @@
             placeholder="Digite a sua tarefa:"
             id="todoapp-addTask"
           />
-          <button type="button" class="todo-button" id="button-Add">
+          <button type="submit" class="todo-button" id="button-Add">
             <i class="fa-solid fa-plus"></i>
           </button>
         </div>
-        <ul class="tasksList-listTasks"></ul>
+        <ul class="tasksList-listTasks">
+        </ul>
       </form>
       <form class="todoapp hide" id="edit-form">
         <div class="todoapp-boxTextAdd">
@@ -50,10 +51,13 @@
             placeholder="Edite a sua tarefa:"
             id="todoapp-editTask"
           />
-          <button type="button" class="todo-button" id="button-Edit">
+          <button type="submit" class="todo-button" id="button-Edit">
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
         </div>
+        <button type="button" class="todo-button" id="button-Cancel">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </form>
     </main>
   </body>

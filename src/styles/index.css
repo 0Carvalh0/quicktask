@@ -155,16 +155,16 @@ button i {
   align-items: center;
 }
 
-.tasksList-task div:last-child {
-  display: flex;
-  gap: 1rem;
-}
-
 .task-LeftSide {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+}
+
+.tasksList-task .task-RightSide {
+  display: flex;
+  gap: 1rem;
 }
 
 .tasksList-taskCheck {
