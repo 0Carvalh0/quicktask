@@ -40,7 +40,7 @@ main {
   background-size: cover;
 }
 
-button i {
+i {
   pointer-events: none;
 }
 
@@ -91,7 +91,7 @@ button i {
   align-items: center;
 }
 
-#button-Add {
+#button-Add, #button-Edit {
   border: none;
   outline: 0.2rem solid var(--color02);
   background-color: var(--color04);
@@ -120,7 +120,7 @@ button i {
   align-items: center;
 }
 
-.tasksList-task .todo-button {
+.tasksList-task .todo-button, #button-Cancel {
   width: 2rem;
   height: 2rem;
 

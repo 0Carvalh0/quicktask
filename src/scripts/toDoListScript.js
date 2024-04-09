@@ -19,7 +19,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (targetEl.classList.contains("tasksList-taskCheck")) {
-    targetEl.classList.toggle("fa-check");
+    targetEl.querySelector("i").classList.toggle("fa-check");
     pEl.classList.toggle("done");
   }
 
