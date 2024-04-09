@@ -18,17 +18,15 @@ document.addEventListener("click", (e) => {
     taskTitle = parentEl.querySelector("p").innerHTML;
   }
 
-  if (targetEl.classList.contains("tasksList-taskCheck")) {
+  if (
+    targetEl.classList.contains("tasksList-taskCheck")
+  ) {
     targetEl.querySelector("i").classList.toggle("fa-check");
     pEl.classList.toggle("done");
   }
 
   if (targetEl.classList.contains("tasksList-taskRemove")) {
     targetEl.closest("li").remove();
-  }
-
-  if (parentEl && parentEl.querySelector("p")) {
-    taskTitle = parentEl.querySelector("p").innerHTML;
   }
 
   if (targetEl.classList.contains("tasksList-taskEdit")) {

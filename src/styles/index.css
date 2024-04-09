@@ -77,6 +77,8 @@ i {
   border: 0.2rem solid var(--color02);
   border-radius: 2rem;
   background-color: transparent;
+
+  cursor: pointer;
 }
 
 .todoapp .todoapp-boxTextAdd {
@@ -179,6 +181,8 @@ i {
   border-radius: 50%;
 
   font-size: 1rem;
+
+  cursor: pointer;
 }
 
 .done {
