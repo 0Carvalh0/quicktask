@@ -5,6 +5,7 @@ const textBoxAdd = document.querySelector("#todoapp-addTask");
 const textBoxEdit = document.querySelector("#todoapp-editTask");
 const btnAdd = document.querySelector("#button-Add");
 const btnCancelEdit = document.querySelector("#button-Cancel");
+let toDosStorage = [];
 
 let oldInputValue;
 
@@ -18,9 +19,7 @@ document.addEventListener("click", (e) => {
     taskTitle = parentEl.querySelector("p").innerHTML;
   }
 
-  if (
-    targetEl.classList.contains("tasksList-taskCheck")
-  ) {
+  if (targetEl.classList.contains("tasksList-taskCheck")) {
     targetEl.querySelector("i").classList.toggle("fa-check");
     pEl.classList.toggle("done");
   }
@@ -46,7 +45,7 @@ const saveToDo = (text) => {
         <span class="tasksList-taskCheck">
           <i class="fa-solid"></i>
         </span>
-        <p>${text}</p>
+        <p class="tasksList-taskName">${text}</p>
       </div>
       <div class="task-RightSide">
         <button
