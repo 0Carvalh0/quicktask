@@ -5,7 +5,7 @@ const textBoxAdd = document.querySelector("#todoapp-addTask");
 const textBoxEdit = document.querySelector("#todoapp-editTask");
 const btnAdd = document.querySelector("#button-Add");
 const btnCancelEdit = document.querySelector("#button-Cancel");
-let toDosStorage = [];
+let toDoStorage = [];
 
 let oldInputValue;
 
@@ -66,6 +66,7 @@ formAdd.addEventListener("submit", (e) => {
   const inputValue = textBoxAdd.value;
   if (inputValue) {
     saveToDo(inputValue);
+    toDoStorage.push(inputValue);
     textBoxAdd.value = "";
     textBoxAdd.focus();
   }
@@ -87,6 +88,7 @@ const updateToDo = (text) => {
 
     if (taskText.innerText === oldInputValue) {
       taskText.innerText = text;
+      toDoStorage[toDoStorage.indexOf(oldInputValue)] = text;
     }
   });
 };

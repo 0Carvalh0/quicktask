@@ -137,6 +137,10 @@ i {
   font-size: 1rem;
 }
 
+.tasksList-taskName {
+  pointer-events: none;
+}
+
 .tasksList-listTasks {
   width: 100%;
 
