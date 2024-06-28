@@ -16,7 +16,7 @@ if (localStorage.getItem("arrayTasks") == "") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  toDoStorage = localStorage.getItem("arrayTasks").split(',');
+  toDoStorage = JSON.parse(localStorage.getItem("arrayTasks"));
 
   toDoStorage.forEach((element) => {
     saveToDo(element);
@@ -39,16 +39,19 @@ document.addEventListener("click", (e) => {
     targetEl.querySelector("i").classList.toggle("fa-check");
     pEl.classList.toggle("done");
 
-    // COLOCAR SE A TASK ESTA CHECKED NO LOCAL STORAGE
+    toDoStorage.forEach((element) => {
+      if (element.taskTitle == pEl.innerHTML) {
+        element.isChecked = !element.isChecked;
+      }
+    });
+    localStorage.setItem("arrayTasks", JSON.stringify(toDoStorage));
   }
 
   if (targetEl.classList.contains("tasksList-taskRemove")) {
-    toDoStorage.forEach((task) => {
-      if (task == taskTitle) {
-        toDoStorage.splice(toDoStorage.indexOf(task), 1);
-      }
-    });
-    localStorage.setItem("arrayTasks", toDoStorage);
+    toDoStorage = toDoStorage.filter(
+      (element) => element.taskTitle !== taskTitle
+    );
+    localStorage.setItem("arrayTasks", JSON.stringify(toDoStorage));
 
     parentEl.remove();
   }
@@ -63,27 +66,50 @@ document.addEventListener("click", (e) => {
 
 // CREATE TASK
 
-const saveToDo = (text) => {
-  tasksList.innerHTML += `
-    <li class="tasksList-task">
-      <div class="task-LeftSide">
-        <span class="tasksList-taskCheck">
-          <i class="fa-solid"></i>
-        </span>
-        <p class="tasksList-taskName">${text}</p>
-      </div>
-      <div class="task-RightSide">
-        <button
-          type="button"
-          class="todo-button fa-solid fa-pen-to-square tasksList-taskEdit"
-        ></button>
-        <button
-          type="button"
-          class="todo-button fa-solid fa-trash tasksList-taskRemove"
-        ></button>
-      </div>
-    </li>
-    `;
+const saveToDo = (element) => {
+  if (element.isChecked) {
+    tasksList.innerHTML += `
+      <li class="tasksList-task">
+        <div class="task-LeftSide">
+          <span class="tasksList-taskCheck">
+            <i class='fa-solid fa-check'></i>
+          </span>
+          <p class="tasksList-taskName done">${element.taskTitle}</p>
+        </div>
+        <div class="task-RightSide">
+          <button
+            type="button"
+            class="todo-button fa-solid fa-pen-to-square tasksList-taskEdit"
+          ></button>
+          <button
+            type="button"
+            class="todo-button fa-solid fa-trash tasksList-taskRemove"
+          ></button>
+        </div>
+      </li>
+      `;
+  } else {
+    tasksList.innerHTML += `
+      <li class="tasksList-task">
+        <div class="task-LeftSide">
+          <span class="tasksList-taskCheck">
+            <i class='fa-solid'></i>
+          </span>
+          <p class="tasksList-taskName">${element.taskTitle}</p>
+        </div>
+        <div class="task-RightSide">
+          <button
+            type="button"
+            class="todo-button fa-solid fa-pen-to-square tasksList-taskEdit"
+          ></button>
+          <button
+            type="button"
+            class="todo-button fa-solid fa-trash tasksList-taskRemove"
+          ></button>
+        </div>
+      </li>
+      `;
+  }
 };
 
 formAdd.addEventListener("submit", (e) => {
@@ -92,10 +118,14 @@ formAdd.addEventListener("submit", (e) => {
   const inputValue = textBoxAdd.value;
 
   if (inputValue) {
-    saveToDo(inputValue);
+    const objTask = {
+      isChecked: false,
+      taskTitle: inputValue,
+    };
 
-    toDoStorage.push(inputValue);
-    localStorage.setItem("arrayTasks", toDoStorage);
+    saveToDo(objTask);
+    toDoStorage.push(objTask);
+    localStorage.setItem("arrayTasks", JSON.stringify(toDoStorage));
 
     textBoxAdd.value = "";
     textBoxAdd.focus();
@@ -119,8 +149,13 @@ const updateToDo = (text) => {
     if (taskText.innerText === oldInputValue) {
       taskText.innerText = text;
 
-      toDoStorage[toDoStorage.indexOf(oldInputValue)] = text;
-      localStorage.setItem("arrayTasks", toDoStorage);
+      toDoStorage.forEach((objTask, indexTask) => {
+        if (toDoStorage[indexTask].taskTitle == oldInputValue) {
+          objTask.taskTitle = text;
+
+          localStorage.setItem("arrayTasks", JSON.stringify(toDoStorage));
+        }
+      });
     }
   });
 };
