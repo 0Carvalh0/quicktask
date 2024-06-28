@@ -9,6 +9,22 @@ let toDoStorage = [];
 
 let oldInputValue;
 
+// LOCAL STORAGE
+
+if (localStorage.getItem("arrayTasks") == "") {
+  localStorage.removeItem("arrayTasks");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  toDoStorage = localStorage.getItem("arrayTasks").split(',');
+
+  toDoStorage.forEach((element) => {
+    saveToDo(element);
+  });
+});
+
+// TODO EVENTS
+
 document.addEventListener("click", (e) => {
   const targetEl = e.target;
   const parentEl = targetEl.closest("li");
@@ -22,10 +38,19 @@ document.addEventListener("click", (e) => {
   if (targetEl.classList.contains("tasksList-taskCheck")) {
     targetEl.querySelector("i").classList.toggle("fa-check");
     pEl.classList.toggle("done");
+
+    // COLOCAR SE A TASK ESTA CHECKED NO LOCAL STORAGE
   }
 
   if (targetEl.classList.contains("tasksList-taskRemove")) {
-    targetEl.closest("li").remove();
+    toDoStorage.forEach((task) => {
+      if (task == taskTitle) {
+        toDoStorage.splice(toDoStorage.indexOf(task), 1);
+      }
+    });
+    localStorage.setItem("arrayTasks", toDoStorage);
+
+    parentEl.remove();
   }
 
   if (targetEl.classList.contains("tasksList-taskEdit")) {
@@ -63,10 +88,15 @@ const saveToDo = (text) => {
 
 formAdd.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const inputValue = textBoxAdd.value;
+
   if (inputValue) {
     saveToDo(inputValue);
+
     toDoStorage.push(inputValue);
+    localStorage.setItem("arrayTasks", toDoStorage);
+
     textBoxAdd.value = "";
     textBoxAdd.focus();
   }
@@ -88,7 +118,9 @@ const updateToDo = (text) => {
 
     if (taskText.innerText === oldInputValue) {
       taskText.innerText = text;
+
       toDoStorage[toDoStorage.indexOf(oldInputValue)] = text;
+      localStorage.setItem("arrayTasks", toDoStorage);
     }
   });
 };
