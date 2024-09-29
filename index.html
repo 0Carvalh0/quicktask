@@ -6,62 +6,69 @@
 
     <link
       rel="shortcut icon"
-      href="public/images/favicon.png"
+      href="public/icon/favicon.ico"
       type="image/x-icon"
     />
-    <title>To do List</title>
+    <title>QuickTask</title>
 
-    <link rel="stylesheet" href="./src/styles/reset.css" />
-
+    <!-- CSS -->
     <link rel="stylesheet" href="./src/styles/index.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-
+    <!-- BIBLIOTECAS -->
     <script
       src="https://kit.fontawesome.com/9bfb2428d0.js"
       crossorigin="anonymous"
       defer
     ></script>
 
+    <!-- JAVASCRIPT -->
     <script src="./src/scripts/toDoListScript.js" defer></script>
   </head>
 
   <body>
-    <main>
-      <form class="todoapp" id="add-form">
-        <h1 class="todoapp-title title">To Do List</h1>
-        <div class="todoapp-boxTextAdd">
+    <main class="todoapp">
+      <form class="todoapp__form todoapp__form--add" id="add-form">
+        <h1 class="todoapp__title">Quick<strong>Task</strong></h1>
+        <div class="todoapp__input-container">
           <input
             type="text"
             name="itask"
-            placeholder="Digite a sua tarefa:"
+            placeholder="Adicionar nova tarefa"
+            class="todoapp__input todoapp__input--add"
             id="todoapp-addTask"
           />
-          <button type="submit" class="todo-button" id="button-Add">
-            <i class="fa-solid fa-plus"></i>
-          </button>
+          <button
+            type="submit"
+            class="todoapp__button todoapp__button--add fa-solid fa-plus"
+            id="button-Add"
+          ></button>
         </div>
-        <ul class="tasksList-listTasks"></ul>
+        <ul class="todoapp__tasks-list"></ul>
       </form>
-      <form class="todoapp hide" id="edit-form">
-        <div class="todoapp-boxTextAdd">
+
+      <form class="todoapp__form todoapp__form--edit hide" id="edit-form">
+        <div class="todoapp__input-container">
           <input
             type="text"
             name="itask"
             placeholder="Edite a sua tarefa:"
+            class="todoapp__input todoapp__input--edit"
             id="todoapp-editTask"
           />
-          <button type="submit" class="todo-button" id="button-Edit">
+          <button
+            type="submit"
+            class="todoapp__button todoapp__button--edit"
+            id="button-Edit"
+          >
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
         </div>
-        <button type="button" class="todo-button" id="button-Cancel">
-          <i class="fa-solid fa-xmark"></i>
+        <button
+          type="button"
+          class="todoapp__button todoapp__button--cancel"
+          id="button-Cancel"
+        >
+          <i class="fa-solid fa-xmark"></i>Cancelar
         </button>
       </form>
     </main>
