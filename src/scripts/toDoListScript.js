@@ -56,9 +56,10 @@ document.addEventListener("click", (e) => {
   }
 
   if (targetEl.classList.contains("todoapp__button--editTask")) {
-    oldInputValue = taskTitle; // Definindo o valor aqui
+    oldInputValue = taskTitle;
     toggleForms();
     textBoxEdit.value = taskTitle;
+    textBoxEdit.focus();
   }
 });
 
