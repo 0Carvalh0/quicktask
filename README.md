@@ -47,13 +47,13 @@ Se deseja rodar o projeto localmente, siga os passos abaixo:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/0Carvalh0/QuickTask.git
+   git clone https://github.com/0Carvalh0/quicktask.git
    ```
 
 2. Acesse o diretório do projeto::
 
    ```bash
-   cd QuickTask
+   cd quicktask
    ```
 
 3. Abra o arquivo index.html no seu navegador.
@@ -73,19 +73,19 @@ Contribuições são sempre bem-vindas! Se você tiver ideias para melhorar o pr
 2. Crie uma nova branch para suas alterações:
 
    ```bash
-   git checkout -b feature/nova-funcionalidade
+   git checkout -b feature/nome-da-feature
    ```
 
 3. Faça suas alterações e commit:
 
    ```bash
-   git commit -m "Adiciona nova funcionalidade"
+   git commit -m "Adicionando nova funcionalidade"
    ```
 
 4. Envie suas alterações:
 
    ```bash
-   git push origin feature/nova-funcionalidade
+   git push origin feature/nome-da-feature
    ```
 
 5. Abra um pull request.
