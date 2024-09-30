@@ -1,9 +1,0 @@
-{
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "src/styles/index.css", "use": "@vercel/static" },
-    { "src": "src/scripts/toDoListScript.js", "use": "@vercel/static" },
-    { "src": "public/icon/favicon.ico", "use": "@vercel/static" }
-  ],
-  "routes": [{ "src": "/(.*)", "dest": "/" }]
-}
