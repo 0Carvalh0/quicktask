@@ -1,0 +1,74 @@
+.todoapp {
+    max-height: 80vh;
+    width: 90vw;
+    max-width: 600px;
+    overflow: hidden;
+
+    padding: 2rem;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todoapp__title {
+    margin-bottom: 1rem;
+
+    font-family: var(--titleFont);
+    font-size: 2rem;
+    color: var(--color01);
+    text-align: center;
+}
+
+.todoapp__title strong {
+    font-weight: bold;
+}
+
+.todoapp__tasks-list {
+    max-height: calc(80vh - 200px);
+    overflow-y: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    gap: 16px;
+}
+
+.todoapp__task {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px;
+    border: 3px solid var(--color01);
+    border-radius: 8px;
+}
+
+.task-LeftSide {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.todoapp__task-check {
+    width: 24px;
+    height: 24px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    border: 3px solid var(--color01);
+
+    font-size: 1.2rem;
+}
+
+.todoapp__task-check i {
+    pointer-events: none;
+}
+
+.done {
+    color: #9b9b98;
+    text-decoration: line-through;
+}

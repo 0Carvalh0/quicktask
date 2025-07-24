@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+
+@import url("./reset.css");
+@import url("./components/main.css");
+@import url("./components/Form.css");
+@import url("./components/Footer.css");
+
+:root {
+    --colorwhite: #f7f9fb;
+    --colorblack: #2c3e50;
+    --color01: #255b9b;
+    --color02: #a4d8e1;
+    --color03: #f1c40f;
+
+    --defaultFont: "Roboto", sans-serif;
+    --titleFont: "Montserrat", sans-serif;
+}
+
+body {
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    font-family: var(--defaultFont);
+    color: var(--colorblack);
+    background: var(--colorwhite);
+}

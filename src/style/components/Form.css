@@ -1,0 +1,36 @@
+.todoapp__input-container {
+    display: flex;
+
+    margin-bottom: 1rem;
+}
+
+#todoapp-addTask,
+#todoapp-editTask {
+    width: 100%;
+
+    padding: 8px;
+    margin-right: 1rem;
+
+    border-bottom: 3px solid var(--color01);
+}
+
+#button-Add,
+#button-Edit {
+    padding: 12px;
+
+    border-radius: 30% 70% 63% 37% / 27% 32% 68% 73%;
+
+    color: var(--colorwhite);
+    background: var(--color01);
+}
+
+#edit-form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.todoapp__button--cancel {
+    display: flex;
+    gap: 4px;
+}

@@ -1,0 +1,15 @@
+.footer {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color01);
+    color: var(--colorwhite);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.875rem;
+}
+
+.footer p {
+    margin: 0;
+}
