@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import FormAdd from "./components/FormAdd";
